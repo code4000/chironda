@@ -1,0 +1,30 @@
+<% if @home != nil %>
+<section id="testimonials" class="section parallax" style="background-image: url('<%= url_for(@home.testimonial) %>');">
+	<% else %>
+	<section id="testimonials" class="section parallax noimg" >
+		<% end %>
+	<div class="container">
+		<div class="row wow zoomIn" data-wow-duration="700ms" data-wow-delay="300ms">
+			<!--Start heading-->
+			<div class="col-md-offset-2 col-md-8">
+				<div class="section-header">
+					<h2 style="color: white !important;">testimonials</h2>
+				</div>
+			</div>
+			<!--End heading-->
+			<div class="col-md-8 col-md-offset-2">
+				<div class="testimonials-carousel">
+					<!--Start Testimonial item #1-->
+					<% @testimonial.each do |testimonial| %>
+					<div class="items">
+						<div class="clearfix">
+							<div class="name"><%= testimonial.name %></div>
+							<div class="desc"><%= testimonial.content %></div>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			</div>
+		</div> <!--/.row-->
+	</div> <!--/.container-->
+</section>

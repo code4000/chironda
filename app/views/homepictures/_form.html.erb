@@ -1,0 +1,297 @@
+<%= form_for @home, html: { multipart: true }  do |f| %>
+<% if @home.errors.any? %>
+<h2><%= pluralize(@home.errors.count, "error") %> prevented this post from saving</h2>
+<ul>
+	<% @home.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+	<% end %>
+</ul>
+<% end %>
+
+			<div class="col-md-12 wow fadeInUp"  data-wow-duration="700ms" data-wow-delay="300ms">
+				<div class="section-header">
+					<h2 style="color: black">Homeslider text</h2>
+					<hr style="border-top: 1px solid rgba(224, 178, 152, 0.7) ">
+				</div>
+			</div>
+  <div class="form-group form">
+    <%= f.label :hometext1 %><br>
+    <%= f.text_field :hometext1, class: "form-control" %>
+  </div>
+    <div class="form-group form">
+    <%= f.label :hometext2 %><br>
+    <%= f.text_field :hometext2, class: "form-control" %>
+  </div>
+    <div class="form-group form">
+    <%= f.label :hometext3 %><br>
+    <%= f.text_field :hometext3, class: "form-control" %>
+  </div>
+			<div class="col-md-12 wow fadeInUp"  data-wow-duration="700ms" data-wow-delay="300ms">
+				<div class="section-header">
+					<h2 style="color: black">Contact details</h2>
+					<hr style="border-top: 1px solid rgba(224, 178, 152, 0.7) ">
+				</div>
+			</div>
+    <div class="form-group form">
+    <%= f.label 'Location 1' %><br>
+    <%= f.text_field :contactlocation, class: "form-control" %>
+  </div>
+      <div class="form-group form">
+    <%= f.label 'City' %><br>
+    <%= f.text_field :city, class: "form-control" %>
+  </div>
+      <div class="form-group form">
+    <%= f.label 'Number' %><br>
+    <%= f.text_field :locnumber, class: "form-control" %>
+  </div>
+      <div class="form-group form">
+    <%= f.label 'Location 2' %><br>
+    <%= f.text_field :contactlocation1, class: "form-control" %>
+  </div>
+        <div class="form-group form">
+    <%= f.label 'City' %><br>
+    <%= f.text_field :city1, class: "form-control" %>
+  </div>
+      <div class="form-group form">
+    <%= f.label 'Number' %><br>
+    <%= f.text_field :locnumber1, class: "form-control" %>
+  </div>
+      <div class="form-group form">
+    <%= f.label 'Location 3' %><br>
+    <%= f.text_field :contactlocation2, class: "form-control" %>
+  </div>
+        <div class="form-group form">
+    <%= f.label 'City' %><br>
+    <%= f.text_field :city2, class: "form-control" %>
+  </div>
+      <div class="form-group form">
+    <%= f.label 'Number' %><br>
+    <%= f.text_field :locnumber2, class: "form-control" %>
+  </div>
+        <div class="form-group form">
+    <%= f.label 'Email' %><br>
+    <%= f.email_field :email, class: "form-control" %>
+  </div>
+          <div class="form-group form">
+    <%= f.label 'Number' %><br>
+    <%= f.text_field :number, class: "form-control" %>
+  </div>
+            <div class="form-group form">
+    <%= f.label 'Opened Time' %><br>
+    <%= f.text_field :time, class: "form-control" %>
+  </div>
+            <div class="form-group form">
+    <%= f.label 'Closed time' %><br>
+    <%= f.text_field :time1, class: "form-control" %>
+  </div>
+
+			<div class="col-md-12 wow fadeInUp"  data-wow-duration="700ms" data-wow-delay="300ms">
+				<div class="section-header">
+					<h2 style="color: black">background images</h2>
+					<hr style="border-top: 1px solid rgba(224, 178, 152, 0.7) ">
+				</div>
+			</div>
+
+<div class="form row">
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<%= f.label 'Homeslider1', style: 'padding-top: 15px' %><br>
+		<%= f.file_field :homeslider1, class: "btn btn-md btn-primary", id: "pictureInput", style: 'width:100%'  %>
+		<% if @home.homeslider1? %>
+		<%= image_tag @home.homeslider1.variant(:medium), id: 'img' %>
+		<% end %>
+		<div id="target" class="target"></div>
+
+	</div>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<%= f.label 'Homeslider2', style: 'padding-top: 15px' %><br>
+		<%= f.file_field :homeslider2, class: "btn btn-md btn-primary", id: "pictureInput1", style: 'width:100%'  %>
+		<% if @home.homeslider2? %>
+		<%= image_tag @home.homeslider2.variant(:medium), id: 'img1' %>
+		<% end %>
+		<div id="target1" class="target"></div>
+
+	</div>
+	<div class="clear"></div>
+	<div class="clearsm"></div>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<%= f.label 'Homeslider3', style: 'padding-top: 15px' %><br>
+		<%= f.file_field :homeslider3, class: "btn btn-md btn-primary", id: "pictureInput2", style: 'width:100%'  %>
+		<% if @home.homeslider3? %>
+		<%= image_tag @home.homeslider3.variant(:medium), id: 'img2' %>
+		<% end %>
+		<div id="target2" class="target"></div>
+
+	</div>
+	<div class="clear"></div>
+	<div class="clearsm"></div>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<%= f.label 'About', style: 'padding-top: 15px' %><br>
+		<%= f.file_field :about, class: "btn btn-md btn-primary", id: "pictureInput3", style: 'width:100%'  %>
+		<% if @home.about? %>
+		<%= image_tag @home.about.variant(:medium), id: 'img3' %>
+		<% end %>
+		<div id="target3" class="target"></div>
+
+	</div>
+	<div class="clear"></div>
+	<div class="clearsm"></div>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<%= f.label 'Testimonial', style: 'padding-top: 15px' %><br>
+		<%= f.file_field :testimonial, class: "btn btn-md btn-primary", id: "pictureInput4", style: 'width:100%'  %>
+		<% if @home.testimonial? %>
+		<%= image_tag @home.testimonial.variant(:medium), id: 'img4' %>
+		<% end %>
+		<div id="target4" class="target"></div>
+
+	</div>
+	<div class="clear"></div>
+	<div class="clearsm"></div>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<%= f.label 'Pricing', style: 'padding-top: 15px' %><br>
+		<%= f.file_field :pricing, class: "btn btn-md btn-primary", id: "pictureInput5", style: 'width:100%'  %>
+		<% if @home.pricing? %>
+		<%= image_tag @home.pricing.variant(:medium), id: 'img5' %>
+		<% end %>
+		<div id="target5" class="target"></div>
+
+	</div>
+	<div class="clear"></div>
+	<div class="clearsm"></div>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<%= f.label 'Contact', style: 'padding-top: 15px' %><br>
+		<%= f.file_field :contact, class: "btn btn-md btn-primary", id: "pictureInput6", style: 'width:100%'  %>
+		<% if @home.contact? %>
+		<%= image_tag @home.contact.variant(:medium), id: 'img6' %>
+		<% end %>
+		<div id="target6" class="target"></div>
+
+	</div>
+
+
+</div>
+
+<br>
+<br>
+
+<div class="form-group form" style="">
+	<%= f.submit class: "btn btn-lg btn-primary",data: { confirm: "Are you sure?"} %>
+</div>
+<% end %>
+
+<script type="text/javascript">
+	$(function() {
+		$('#pictureInput').on('change', function(event) {
+			var files = event.target.files;
+			var image = files[0]
+			var reader = new FileReader();
+			reader.onload = function(file) {
+				$('#img').hide();
+				var img = new Image();
+				img.src = file.target.result;
+				img.className = 'img';
+
+
+
+				$('#target').html(img);
+			}
+			reader.readAsDataURL(image);
+		});
+		$('#pictureInput1').on('change', function(event) {
+			var files = event.target.files;
+			var image = files[0]
+			var reader = new FileReader();
+			reader.onload = function(file) {
+				$('#img1').hide();
+				var img = new Image();
+				img.src = file.target.result;
+				img.className = 'img';
+
+
+
+				$('#target1').html(img);
+			}
+			reader.readAsDataURL(image);
+		});
+		$('#pictureInput2').on('change', function(event) {
+			var files = event.target.files;
+			var image = files[0]
+			var reader = new FileReader();
+			reader.onload = function(file) {
+				$('#img2').hide();
+				var img = new Image();
+				img.src = file.target.result;
+				img.className = 'img';
+
+
+
+				$('#target2').html(img);
+			}
+			reader.readAsDataURL(image);
+		});
+		$('#pictureInput3').on('change', function(event) {
+			var files = event.target.files;
+			var image = files[0]
+			var reader = new FileReader();
+			reader.onload = function(file) {
+				$('#img3').hide();
+				var img = new Image();
+				img.src = file.target.result;
+				img.className = 'img';
+
+
+
+				$('#target3').html(img);
+			}
+			reader.readAsDataURL(image);
+		});
+		$('#pictureInput4').on('change', function(event) {
+			var files = event.target.files;
+			var image = files[0]
+			var reader = new FileReader();
+			reader.onload = function(file) {
+				$('#img4').hide();
+				var img = new Image();
+				img.src = file.target.result;
+				img.className = 'img';
+
+
+
+				$('#target4').html(img);
+			}
+			reader.readAsDataURL(image);
+		});
+		$('#pictureInput5').on('change', function(event) {
+			var files = event.target.files;
+			var image = files[0]
+			var reader = new FileReader();
+			reader.onload = function(file) {
+				$('#img5').hide();
+				var img = new Image();
+				img.src = file.target.result;
+				img.className = 'img';
+
+
+
+				$('#target5').html(img);
+			}
+			reader.readAsDataURL(image);
+		});
+		$('#pictureInput6').on('change', function(event) {
+			var files = event.target.files;
+			var image = files[0]
+			var reader = new FileReader();
+			reader.onload = function(file) {
+				$('#img6').hide();
+				var img = new Image();
+				img.src = file.target.result;
+				img.className = 'img';
+
+
+
+				$('#target6').html(img);
+			}
+			reader.readAsDataURL(image);
+		});
+	});
+
+</script>

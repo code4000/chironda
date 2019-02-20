@@ -1,0 +1,108 @@
+<% if @home != nil %>
+<section id="pricing" class="section parallax" id="pricing" style="background-image: url('<%= url_for(@home.pricing) %>');">
+	<% else %>
+	<section id="pricing" class="section parallax noimg" id="pricing" >
+		<% end %>
+	<div class="container">
+		<div class="row">
+
+			<!--Start heading-->
+			<div class="col-md-12 wow fadeInUp"  data-wow-duration="700ms" data-wow-delay="300ms">
+				<div class="section-header">
+					<h2 style="color: black">pricing</h2>
+					<hr style="border-top: 1px solid rgba(224, 178, 152, 0.7) ">
+				</div>
+			</div>
+			<!--End heading-->
+
+			<div class="col-md-3 wow fadeInUp" data-wow-duration="700ms" data-wow-delay="500ms">
+				<div class="pricing-table">
+					<h1>Permanent make-up</h1>
+					<div class="feature-list">
+						<table class="zubi">
+							<tbody>
+								<% @treatment.each do |treatment| %>
+								<% if treatment.category === "Permanent-make-up" %>
+								<tr>
+									<td class="left"><%= treatment.speciality %></td>
+									<td class="right">£<%= treatment.price %></td>
+								</tr>
+								<% end -%>
+								<% end %>
+							</tbody>
+						</table>
+					</div>
+					<div class="price-signup scroll">
+						<a href="#contact" class="btn btn-primary btn-lg">Book Now</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 wow fadeInUp" data-wow-duration="700ms" data-wow-delay="500ms">
+				<div class="pricing-table">
+					<h1>SKIN</h1>
+					<div class="feature-list">
+						<table class="zubi">
+							<tbody>
+								<% @treatment.each do |treatment| %>
+								<% if treatment.category === "Skin" %>
+								<tr>
+									<td class="left"><%= treatment.speciality %></td>
+									<td class="right">£<%= treatment.price %></td>
+								</tr>
+								<% end -%>
+								<% end %>
+							</tbody>
+						</table>
+					</div>
+					<div class="price-signup scroll">
+						<a href="#contact" class="btn btn-primary btn-lg">Book Now</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 wow fadeInUp" data-wow-duration="700ms" data-wow-delay="500ms">
+				<div class="pricing-table">
+					<h1>LASHES</h1>
+					<div class="feature-list">
+						<table class="zubi">
+							<tbody>
+								<% @treatment.each do |treatment| %>
+								<% if treatment.category === "Lashes" %>
+								<tr>
+									<td class="left"><%= treatment.speciality %></td>
+									<td class="right">£<%= treatment.price %></td>
+								</tr>
+								<% end -%>
+								<% end %>
+							</tbody>
+						</table>
+					</div>
+					<div class="price-signup scroll">
+						<a href="#contact" class="btn btn-primary btn-lg">Book Now</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 wow fadeInUp" data-wow-duration="700ms" data-wow-delay="500ms">
+				<div class="pricing-table">
+					<h1>BROWS</h1>
+					<div class="feature-list">
+						<table class="zubi">
+							<tbody>
+								<% @treatment.each do |treatment| %>
+								<% if treatment.category === "Brows" %>
+								<tr>
+									<td class="left"><%= treatment.speciality %></td>
+									<td class="right">£<%= treatment.price %></td>
+								</tr>
+								<% end -%>
+								<% end %>
+							</tbody>
+						</table>
+					</div>
+					<div class="price-signup scroll">
+						<a href="#contact" class="btn btn-primary btn-lg">Book Now</a>
+					</div>
+				</div>
+			</div>
+		</div> <!--/.row-->
+	</div>
+</section>

@@ -1,0 +1,243 @@
+
+<%= form_for @treatment, html: { multipart: true }  do |f| %>
+<% if @treatment.errors.any? %>
+<h2><%= pluralize(@treatment.errors.count, "error") %> prevented this post from saving</h2>
+<ul>
+	<% @treatment.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+	<% end %>
+</ul>
+<% end %>
+
+
+
+<div class="form-group form">
+	<%= f.label :category %><br>
+	<%= f.select :category, ['Brows','Lashes','Permanent-make-up','Skin'], class: "form-control" %>
+</div>
+<br>
+<br>
+<div class="form-group form">
+	<%= f.label 'Link No spaces allowed' %><br>
+	<%= f.text_field :link, class: "form-control"  %>
+</div>
+<div class="form-group form">
+	<%= f.label :speciality %><br>
+	<%= f.text_field :speciality, class: "form-control"  %>
+</div>
+<br>
+<br>
+<div class="form-group form">
+	<%= f.label :content %><br>
+	<%= f.text_area :content, class: "form-control"  %>
+</div>
+<br>
+<br>
+<div class="form-group form">
+	<%= f.label 'Price(without £)' %><br>
+	<%= f.text_field :price, class: "form-control"  %>
+</div>
+<br>
+<br>
+<div class="form-group form">
+	<%= f.label :duration %><br>
+	<%= f.text_field :duration, class: "form-control"  %>
+</div>
+<br>
+<br>
+
+<div class="form row">
+	<div class="col-md-6 col-sm-6 col-xs-12">
+		<%= f.label 'Gallery Image', style: 'padding-top: 15px' %><br>
+		<%= f.file_field :image, class: "btn btn-md btn-primary", id: "pictureInput", style: 'width:100%'  %>
+			<% if @treatment.image? %>
+		<%= image_tag @treatment.image.variant(:medium), id: 'img' %>
+		<% end %>
+		<div id="target" class="target"></div>
+
+	</div>
+	<div class="clear"></div>
+	<div class="clearsm"></div>
+
+	<div class="col-md-6 col-sm-6 col-xs-12">
+
+		<%= f.label :image1, style: 'padding-top: 15px' %><br>
+		<%= f.file_field :image1, class: "btn btn-md btn-primary" , id: "pictureInput1", style: 'width:100%' %>
+			<% if @treatment.image1? %>
+		<%= image_tag @treatment.image1.variant(:medium), id: 'img1' %>
+		<% end %>
+		<div id="target1" class="target"></div>
+	</div>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+
+		<%= f.label :image2, style: 'padding-top: 15px' %><br>
+		<%= f.file_field :image2, class: "btn btn-md btn-primary", id: "pictureInput2", style: 'width:100%'  %>
+			<% if @treatment.image2? %>
+		<%= image_tag @treatment.image2.variant(:medium), id: 'img2' %>
+		<% end %>
+
+		<div id="target2" class="target"></div>
+
+	</div>
+	<div class="clearsm"></div>
+	<div class="clear"></div>
+
+
+	<div class="col-md-6 col-sm-6 col-xs-12">
+
+		<%= f.label :image3, style: 'padding-top: 15px' %><br>
+		<%= f.file_field :image3, class: "btn btn-md btn-primary", id: "pictureInput3", style: 'width:100%'  %>
+			<% if @treatment.image3? %>
+		<%= image_tag @treatment.image3.variant(:medium), id: 'img3' %>
+		<% end %>
+
+		<div id="target3" class="target"></div>
+	</div>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+
+		<%= f.label :image4, style: 'padding-top: 15px' %><br>
+		<%= f.file_field :image4, class: "btn btn-md btn-primary", id: "pictureInput4", style: 'width:100%'  %>
+			<% if @treatment.image4? %>
+		<%= image_tag @treatment.image4.variant(:medium), id: 'img4' %>
+		<% end %>
+
+		<div id="target4" class="target"></div>
+
+	</div>
+	<div class="clearsm"></div>
+	<div class="clear"></div>
+
+	<div class="col-md-6 col-sm-6 col-xs-12">
+
+		<%= f.label :image5, style: 'padding-top: 15px' %><br>
+		<%= f.file_field :image5, class: "btn btn-md btn-primary", id: "pictureInput5", style: 'width:100%'  %>
+			<% if @treatment.image5? %>
+		<%= image_tag @treatment.image5.variant(:medium), id: 'img5' %>
+		<% end %>
+
+		<div id="target5" class="target"></div>
+
+	</div>
+	<div class="col-md-6 col-sm-6 col-xs-12">
+
+		<%= f.label :image6, style: 'padding-top: 15px' %><br>
+		<%= f.file_field :image6, class: "btn btn-md btn-primary", id: "pictureInput6", style: 'width:100%'  %>
+		<% if @treatment.image6? %>
+		<%= image_tag @treatment.image6.variant(:medium), id: 'img6' %>
+		<% end %>
+		<div id="target6" class="target"></div>
+
+	</div>
+</div>
+
+<br>
+<br>
+
+<div class="form-group form" style="">
+	<%= f.submit class: "btn btn-lg btn-primary",data: { confirm: "Are you sure?"} %>
+</div>
+<% end %>
+
+<script type="text/javascript">
+	$(function() {
+		$('#pictureInput').on('change', function(event) {
+			var files = event.target.files;
+			var image = files[0]
+			var reader = new FileReader();
+			reader.onload = function(file) {
+				$('#img').hide();
+				var img = new Image();
+				img.src = file.target.result;
+				img.className = 'img';
+
+
+
+				$('#target').html(img);
+			}
+			reader.readAsDataURL(image);
+		});
+		$('#pictureInput1').on('change', function(event) {
+			var files = event.target.files;
+			var image = files[0]
+			var reader = new FileReader();
+			reader.onload = function(file) {
+				$('#img1').hide();
+				var img = new Image();
+				img.src = file.target.result;
+				img.className = 'img';
+
+				$('#target1').html(img);
+			}
+			reader.readAsDataURL(image);
+		});
+		$('#pictureInput2').on('change', function(event) {
+			var files = event.target.files;
+			var image = files[0]
+			var reader = new FileReader();
+			reader.onload = function(file) {
+				$('#img2').hide();
+				var img = new Image();
+				img.src = file.target.result;
+				img.className = 'img';
+
+				$('#target2').html(img);
+			}
+			reader.readAsDataURL(image);
+		});
+		$('#pictureInput3').on('change', function(event) {
+			var files = event.target.files;
+			var image = files[0]
+			var reader = new FileReader();
+			reader.onload = function(file) {
+				$('#img3').hide();
+				var img = new Image();
+				img.src = file.target.result;
+				img.className = 'img';
+
+				$('#target3').html(img);
+			}
+			reader.readAsDataURL(image);
+		});
+		$('#pictureInput4').on('change', function(event) {
+			var files = event.target.files;
+			var image = files[0]
+			var reader = new FileReader();
+			reader.onload = function(file) {
+				$('#img4').hide();
+				var img = new Image();
+				img.src = file.target.result;
+				img.className = 'img';
+				$('#target4').html(img);
+			}
+			reader.readAsDataURL(image);
+		});
+		$('#pictureInput5').on('change', function(event) {
+			var files = event.target.files;
+			var image = files[0]
+			var reader = new FileReader();
+			reader.onload = function(file) {
+				$('#img5').hide();
+				var img = new Image();
+				img.src = file.target.result;
+				img.className = 'img';
+
+				$('#target5').html(img);
+			}
+			reader.readAsDataURL(image);
+		});
+		$('#pictureInput6').on('change', function(event) {
+			var files = event.target.files;
+			var image = files[0]
+			var reader = new FileReader();
+			reader.onload = function(file) {
+				$('#img6').hide();
+				var img = new Image();
+				img.src = file.target.result;
+				img.className = 'img';
+				$('#target6').html(img);
+			}
+			reader.readAsDataURL(image);
+		});
+
+	});
+</script>

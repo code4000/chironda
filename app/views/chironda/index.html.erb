@@ -1,0 +1,83 @@
+<!--Start Home Slider -->
+
+<%= render 'home' %>
+
+<!--End Home Slider-->
+
+<!--Start Navigation-->
+
+<%= render 'header' %>
+
+<!--End Navigation-->
+
+<div class="margin"></div>
+
+<!--Start What we do -->
+
+<%= render 'whatwedo' %>
+
+<!--End What we do -->
+
+<!--Start facts-->
+<% if @home != nil %>
+<section id="facts" class="section parallax" style="background-image: url('<%= url_for(@home.about) %>');">
+</section>
+	<% else %>
+	<section id="facts" class="section parallax noimg">
+</section>
+		<% end %>
+<!--End facts-->
+
+
+<!--Start Treatments -->
+
+<%= render 'treatments' %>
+
+<!--End Treatments -->
+
+<!--Start Testimonial-->
+
+<%= render 'testimonial' %>
+
+<!--End Testimonial-->
+
+<div class="margin"></div>
+
+
+<!--Start Banner-->
+
+<section id="services" class="section">
+	<div class="container wow zoomIn" data-wow-duration="700ms" data-wow-delay="500ms">
+		<div class="row">
+			<h3>creating &nbsp<span>lasting&nbsp</span>  impressions </h3>
+		</div> <!--/.row-->
+	</div> <!--/.container-->
+</section>
+
+<!--End Banner-->
+
+<!--Start pricing-->
+<%= render 'pricing' %>
+<!-- End Pricing-->
+
+
+<!--Start Banner-->
+<section class="section parallax" id="cta">
+	<div class="container wow zoomIn" data-wow-duration="700ms" data-wow-delay="500ms">
+		<div class="row">
+			<div class="col-md-12 call-to-action">
+				<h3>Specialist <span>treatments</span> for everybody </h3>
+				<p>At Chironda we believe that everyone has the right to look their best.  <br/>This is why we offer easy pay monthly options on all permanent make up treatments. <br/> If you would like to know more... </p>
+				<div class="page-scroll scroll">
+					<a href="#contact" class="btn btn-primary btn-lg btn-scroll btn-color-white1">Get in touch</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--End Banner-->
+
+
+<!--Start Contact-->
+<%= render 'contacts/new' %>
+<!--End Contact-->

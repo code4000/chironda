@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-offset-1 col-md-10">
+    <!--Start heading-->
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+              <div class="section-header">
+                <h2 class="smt"><a data-toggle="collapse" href="#collapse3" id="title">FAQS</a></h2> <br>
+                <div><%= link_to "Add New FAQ", new_faq_path %></div>
+                <hr style="border-top: 1px solid rgba(224, 178, 152, 0.7)">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+          <div class="page-section">
+            <div class=" col-md-12">
+              <!-- Filtering -->
+              <ul class="filtering">
+                <li class="filter" data-filter="Permanent-make-up">  permanent make-up</li>
+                <li class="filter" data-filter="Skin"> Skin</li>
+                <li class="filter" data-filter="Lashes">  lashes</li>
+                <li class="filter" data-filter="Brows">  Brows</li>
+              </ul>
+            </div>
+            <div class="full-width">
+              <!-- Work Grid -->
+              <ul class="work-grid">
+                <!-- Work Block -->
+                <% @faqs.each do |faq| %>
+                <div class="mix faq-item <%= faq.title %>" id="<%= faq.title %>">
+                  <div class="pricing-tables">
+                    <div style="display: inline-block; width: 45%;"><%= link_to 'Edit', edit_faq_path(faq), class: 'btn btn-lg btn-primary white' %>
+                    </div>
+                    <div style="display: inline-block;width: 45%;"><%= link_to 'Delete', faq_path(faq), method: :delete, data: { confirm: "Are you sure?"}, class: 'btn btn-lg btn-primary white' %>
+                      
+                    </div>
+                    <h1><span style="font-size: 50px">Q.</span><%= faq.question %></h1>
+                    <h2><span style="font-size: 50px">A.</span><%= faq.answer %></h2>
+                  </div>
+                </div>
+                <% end %>
+              </ul>
+            </div>               
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End heading-->   
+  </div>
+</div>

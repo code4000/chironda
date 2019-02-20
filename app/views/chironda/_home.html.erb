@@ -1,0 +1,45 @@
+<% provide(:title, "beauty specialist") %>
+<!--/ homeslider -->
+<section id="home">
+	<div class="slider-overlay"></div>
+	<div class="homeslider flexslider">
+		<ul class="slides">
+			<% if @home != nil %>
+			<li class="img1" style="background-image: url('<%= url_for(@home.homeslider1) %>');"></li>
+			<li class="img2" style="background-image: url('<%= url_for(@home.homeslider2) %>');"></li>
+			<li class="img3" style="background-image: url('<%= url_for(@home.homeslider3) %>');"></li>
+			<% else %>
+			<li class="noimg1"></li>
+			<li class="noimg2"></li>
+			<li class="noimg3"></li>
+
+			<% end %>
+		</ul>
+	</div>
+	<!--/ homeslider -->
+
+	<div class="tb"><!-- start text slider-->
+		<div class="tb-cell">
+			<div class="slide-text">
+				<ul id="text-slider">
+					<% if @home != nil %>
+					<li><h1><%= @home.hometext1 %></h1></li>
+					<li><h1><%= @home.hometext2 %></h1></li>
+					<li><h1><%= @home.hometext3 %></h1></li>
+					<% else %>
+					<li><h1>Some text</h1></li>
+					<li><h1>Some text</h1></li>
+					<li><h1>Some text</h1></li>
+					<% end %>
+				</ul>
+				<div class="page-scroll scroll">
+					<% if user_signed_in? %>
+					<%= link_to "Admin Page", admin_index_path, class: 'btn btn-lg btn-primary btn-color-white' %>
+					<% end %>
+					<a class="btn btn-lg btn-primary btn-color-white" href="#contact">Book now</a>
+					<a class="btn btn-lg btn-primary btn-color-white" href="#works">View Work</a>
+				</div>
+			</div>
+		</div>
+	</div><!-- end text slider-->
+</section>

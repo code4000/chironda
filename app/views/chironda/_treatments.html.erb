@@ -1,0 +1,49 @@
+<section id="works" class="section">
+	<!-- Filtering -->
+	<div class="wow fadeInUp" data-wow-duration="700ms" data-wow-delay="500ms">
+		<!--Start heading-->
+		<div class="col-md-offset-2 col-md-8">
+			<div class="section-header">
+				<h2 class="smt">treatments</h2> <br>
+				<p>choose a category</p>
+				<hr style="border-top: 1px solid rgba(224, 178, 152, 0.7)">
+			</div>
+		</div>
+		<!--End heading-->
+		<div class=" col-md-12">
+			<ul class="filtering">
+				<li class="filter" data-filter="Permanent-make-up">  permanent make-up</li>
+				<li class="filter" data-filter="Skin"> Skin</li>
+				<li class="filter" data-filter="Lashes">  lashes</li>
+				<li class="filter" data-filter="Brows">  Brows</li>
+			</ul>
+		</div>
+	</div>
+	<!-- End Filtering -->
+
+	<!-- Work Grid -->
+	<div class="full-width wow fadeInUp" data-wow-duration="700ms" data-wow-delay="700ms">
+		<ul class="work-grid">
+						<!-- Work Block -->
+						<% @treatment.each do |treatment| %>
+						<li class="mix work-item thumbnail-img <%= treatment.category %>">
+							<a href="#" class="popup-image">
+								<%= image_tag treatment.variant(:medium) %>
+							</a>
+							<div class="work-info">
+								<div class="work-info-detail display-table">
+									<div class="display-table-cell">
+										<h4><%= treatment.speciality %></h4>
+										<%= link_to 'View more', treatment, class: 'hidethis btn btn-primary btn-sm btn-color-white' %>
+									</div>
+								</div>
+							</div>
+						</li>
+						<% end %>
+					</ul>
+	</div>
+
+	<!-- End Work Grid -->
+	<div class="clear"></div>
+	<div class=" scroll work-all wow fadeInUp"  data-wow-duration="700ms" data-wow-delay="800ms"> <a href="#works"  class="btn btn-primary btn-lg">CHOOSE ANOTHER CATEGORY</a> </div>
+</section>

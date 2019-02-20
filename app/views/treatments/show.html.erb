@@ -1,0 +1,40 @@
+<% provide(:title, @treatment.speciality) %>
+<!--Start Navigation-->
+
+<%= render 'header' %>
+
+<!--End Navigation-->
+
+<!-- Start Header-->
+<div class="full-section banner parallax">
+  <div class="overlay"></div>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-6 col-sm-6"> <h4><%= @treatment.speciality %></h4></div>
+    <div class="col-md-6 col-sm-6 site_map">
+     <%= link_to 'View more treatments', root_path(anchor: 'works'), class: 'btn btn-lg btn-primary' %>
+   </div>
+ </div>
+</div>
+</div>
+<!-- End Header--> 
+
+<!--Start Page Section-->
+<div class="page-section">
+
+  <!--Start single-work -->
+
+  <%= render 'middle' %>
+
+  <!--End single-work -->
+
+  <!--related works -->
+
+  <%= render 'related' %>
+
+  <!-- End related works -->
+</div>
+<!--End Page Section-->
+
+
+

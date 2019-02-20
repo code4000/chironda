@@ -1,0 +1,43 @@
+<header id="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="fa fa-bars"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<!--Start Logo -->
+				<div class="logo-nav">
+					<a href="<%= root_path %>">
+						<%= image_tag 'logo.png', style: 'width: 181px;height:50px;opacity:0.75' %>
+					</a>
+				</div>
+				<!--End Logo -->
+				<div class="clear-toggle"></div>
+				<div id="main-menu" class="collapse scroll navbar-right">
+					<ul class="nav">
+						<% if user_signed_in? %>
+						<li><%= link_to "Admin", admin_index_path %></li>
+						<% end %>
+
+
+						<li><%= link_to 'Home', root_path %></li>
+
+						<li><%= link_to 'Our story', root_path(anchor: 'services') %></li>
+
+						<li><%= link_to 'Treatments', root_path(anchor: 'works') %></li>
+
+						<li><%= link_to 'Testimonials', root_path(anchor: 'testimonials') %></li>
+
+						<li><%= link_to 'Pricing', root_path(anchor: 'pricing') %></li>
+
+						<li><%= link_to 'Contact', root_path(anchor: 'contact') %></li>
+
+					</ul>
+				</div><!-- End main-menu -->
+			</div>
+		</div>
+	</div>
+</header>

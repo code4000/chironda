@@ -1,0 +1,45 @@
+<header id="header">
+
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
+<span class="sr-only">Toggle navigation</span>
+<span class="fa fa-bars"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<!--Start Logo -->
+<div class="logo-nav">
+	<a href="<%= root_path %>">
+		<%= image_tag 'logo.png', style: 'width: 181px;height:50px;' %>
+	</a>
+</div>
+<!--End Logo -->
+<div class="clear-toggle"></div>
+<div id="main-menu" class="collapse scroll navbar-right">
+<ul class="nav">
+
+<li><%= link_to "Admin Page", admin_index_path %></li>
+
+
+<li><%= link_to "Account settings", edit_user_registration_path %></li>
+<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+</ul>
+</div><!-- End main-menu -->
+</div>
+</div>
+</div>
+
+</header>
+<section class="section">
+<div class="container">
+<div class="section-header">
+<h2>Edit Picture</h2>
+<hr style="border-top: 1px solid rgba(224, 178, 152, 0.7)">
+</div>
+
+<%= render 'form' %>
+
+</div>
+</section>

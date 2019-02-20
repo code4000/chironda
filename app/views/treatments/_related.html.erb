@@ -1,0 +1,37 @@
+<div class="featured-works full-section parallax wow zoomIn" data-wow-duration="700ms" data-wow-delay="700ms">
+  <div class="container">
+    <div class="row">
+      <!--Start heading-->
+      <div class="heading">
+        <h2>Related Treatments</h2>
+      </div>
+      <!--End heading-->
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+
+  <div class="related-project-carousel owl-carousel">
+    <% @treatments.each do |treatment| %>
+
+    <% if (treatment.category == @treatment.category) && (treatment != @treatment) %>
+
+    <!-- Start Item-->
+    <div class="item">
+      <a href="<%= treatment.link %>">
+        <div class="fworks-image">
+          <%= image_tag treatment.variant(:medium) %>
+
+
+
+          <!--Hover Caption-->
+          <div class="featured-caption">
+            <h4><%= treatment.speciality %></h4>
+          </div>
+          <!--End Caption-->
+
+        </div>
+      </a>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>

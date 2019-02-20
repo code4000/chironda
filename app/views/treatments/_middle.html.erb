@@ -1,0 +1,67 @@
+<div class=" full-section single-work wow zoomIn"  data-wow-duration="700ms" data-wow-delay="400ms" >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="single-work-slider owl-carousel owl-theme">
+            <% if @treatment.image1? %>
+            <div class="item"><%= image_tag @treatment.image1.variant(:medium) %>
+
+
+             <a href="<%= url_for(@treatment.image1) %>" class="popup-image ">
+               <i class="fa fa-search-plus"></i>
+             </a>
+           </div>
+           <% end %>
+           <% if @treatment.image2? %>
+           <div class="item"><%= image_tag @treatment.image2.variant(:medium) %><a href="<%= url_for(@treatment.image2) %>" class="popup-image">
+             <i class="fa fa-search-plus"></i>
+           </a>
+         </div>
+         <% end %>
+         <% if @treatment.image3? %>
+         <div class="item"><%= image_tag @treatment.image3.variant(:medium) %><a href="<%= url_for(@treatment.image3) %>" class="popup-image">
+           <i class="fa fa-search-plus"></i>
+         </a>
+       </div>
+       <% end %>
+       <% if @treatment.image4? %>
+         <div class="item"><%= image_tag @treatment.image4.variant(:medium) %><a href="<%= url_for(@treatment.image4) %>" class="popup-image">
+           <i class="fa fa-search-plus"></i>
+         </a>
+       </div>
+       <% end %>
+       <% if @treatment.image5? %>
+         <div class="item"><%= image_tag @treatment.image5.variant(:medium) %><a href="<%= url_for(@treatment.image5) %>" class="popup-image">
+           <i class="fa fa-search-plus"></i>
+         </a>
+       </div>
+       <% end %>
+       <% if @treatment.image6? %>
+         <div class="item"><%= image_tag @treatment.image6.variant(:medium) %><a href="<%= url_for(@treatment.image6) %>" class="popup-image">
+           <i class="fa fa-search-plus"></i>
+         </a>
+       </div>
+       <% end %>
+       </div>
+     </div>
+
+     <!--Start Work Detail-->
+     <div class="col-md-5 work-detail wow zoomIn"  data-wow-duration="700ms" data-wow-delay="500ms" >
+
+      <div class="heading"><h2><%= @treatment.speciality %></h2></div>
+
+      <p><%= @treatment.content %><br></p>
+      <hr>
+      <ul class="work-detail-list">
+        <li><span>Price :</span>£<%= @treatment.price %></li>
+        <li><span>Duration :</span><%= @treatment.duration %></li>
+      </ul>
+
+
+      <li><%= link_to 'Book Now', root_path(anchor: 'contact'), class: 'btn btn-lg btn-primary' %></li>
+
+    </div>
+    <!--End Work Detail-->
+  </div> <!--/ row-->
+</div> <!--/ container-->
+</div>

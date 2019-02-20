@@ -1,0 +1,56 @@
+
+
+<header id="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="fa fa-bars"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<!--Start Logo -->
+				<div class="logo-nav">
+					<a href="<%= root_path %>">
+						<%= image_tag 'logo.png', style: 'width: 181px;height: 50px;opacity: 0.75;gitl' %>
+					</a>
+				</div>
+
+
+				<!--End Logo -->
+				<div class="clear-toggle"></div>
+				<div id="main-menu" class="collapse scroll navbar-right">
+					<ul class="nav">
+						<% if user_signed_in? %>
+						<li><%= link_to "Admin Page", admin_index_path %></li>
+						<% end %>
+						<li class="active"><a href="#home">Home</a></li>
+						<li><a href="#services">What we do</a></li>
+						<li><a href="#works">TREATMENTS</a></li>
+						<li><a href="#testimonials">TESTIMONIALS</a></li>
+						<li><a href="#pricing">Pricing</a></li>
+						<li><a href="#contact">Contact</a></li>
+						<li><a href="<%= faqs_path %>">FAQs</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+
+<script type="text/javascript">
+
+
+	$(document).ready(function(){
+		$("body").scrollspy();
+		$(".nav li").on('click', function(e) {
+			$(this).addClass('active')
+			.siblings()
+			.removeClass('active');
+		});
+	});
+
+
+</script>

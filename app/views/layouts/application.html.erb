@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chironda | <%= yield(:title) %></title>
+    <meta name="description" content="Chironda specialises in natural looking permanent makeup including microblading, lips, brows, lashes & the latest in skin treatments by beauty expert Chantelle">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Author" content="Luis Caio">
+    <%= favicon_link_tag 'fav.ico' %>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+<!--Start Page loader -->
+
+<div id="pageloader">
+<h1 class="message">
+        <% if notice %>
+<p class="notice"><%= notice %></p>
+<% elsif alert %>
+<p class="alert"><%= alert %></p>
+<% end %>  
+</h1>
+<div class="loader">
+<%= image_tag 'progress.gif' %>
+
+</div>
+</div>
+
+<!--End Page loader -->
+    <%= yield %>
+
+<!--Start footer-->
+<footer>
+ <div class="container wow zoomIn"  data-wow-duration="700ms" data-wow-delay="500ms">
+  <div class="row">
+   <div class="col-md-12 text-center">
+    <!--Start footer social-->
+    <ul class="list-inline footer-social">
+     <li><a href="https://m.facebook.com/chirondabeauty/?ref=bookmarks"><i class="fa fa-facebook"></i></a></li>
+
+     <li><a href="https://www.instagram.com/chironda_beauty/"><i class="fa fa-instagram"></i></a></li>
+
+     <li><a href="https://mobile.twitter.com/C_Chrionda"><i class="fa fa-twitter"></i></a></li>
+
+   </ul>
+   <!-- End footer social --> 
+
+   <!-- footer copyright text -->
+   <p id="copy"></p>
+   <!-- end of the footer copyright text -->
+ </div>
+</div> <!--/.row-->
+</div> <!--/.container-->
+</footer>
+<!--End footer-->
+<a href="#" class="scrollup"> <i class="fa fa-chevron-up"> </i> </a>
+  </body>
+
+<script type="text/javascript">
+    var copyRight = document.getElementById('copy');
+  
+
+  var date = new Date();
+  copyRight.innerHTML ="Copyright " + "<a>Code4000</a> " + "&copy "  + date.getFullYear();
+</script>
+</html>

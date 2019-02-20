@@ -1,0 +1,125 @@
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<div class="panel-group">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="row">
+						<div class="col-md-offset-2 col-md-8">
+							<div class="section-header">
+								<h2 class="smt"><a data-toggle="collapse" href="#collapse" id="title">Background pictures | Content</a></h2>
+								<br>
+								<hr style="border-top: 1px solid rgba(224, 178, 152, 0.7)">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="collapse" class="panel-collapse collapse">
+					<div class="page-section">
+					<div class=" col-md-12">
+						<!-- Filtering -->
+						<ul class="filtering">
+							<li class="filter" data-filter="Permanent-make-up">Homeslider</li>
+							<li class="filter" data-filter="About">About</li>
+							<li class="filter" data-filter="Testimonial">Testimonial</li>
+							<li class="filter" data-filter="Pricing">Pricing</li>
+							<li class="filter" data-filter="Contact">  Contact</li>
+						</ul>
+					</div>
+					<div class="full-width">
+					<ul class="work-grid">
+
+						<!-- Work Block -->
+						<% @homes.each do |homepicture| %>
+						<li class="mix work-item thumbnail-img Permanent-make-up">
+							<a href="#" class="popup-image">
+								<%= image_tag homepicture.homeslider1.variant(:medium) %>
+							</a>
+							<div class="work-info">
+								<div class="work-info-detail display-table">
+									<div class="display-table-cell">
+										<h4><%= link_to 'Edit', edit_homepicture_path(homepicture), class: 'white' %></h4>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mix work-item thumbnail-img Permanent-make-up">
+							<a href="#" class="popup-image">
+								<%= image_tag homepicture.homeslider2.variant(:medium) %>
+							</a>
+							<div class="work-info">
+								<div class="work-info-detail display-table">
+									<div class="display-table-cell">
+										<h4><%= link_to 'Edit', edit_homepicture_path(homepicture), class: 'white' %></h4>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mix work-item thumbnail-img Permanent-make-up">
+							<a href="#" class="popup-image">
+								<%= image_tag homepicture.homeslider3.variant(:medium) %>
+							</a>
+							<div class="work-info">
+								<div class="work-info-detail display-table">
+									<div class="display-table-cell">
+										<h4><%= link_to 'Edit', edit_homepicture_path(homepicture), class: 'white' %></h4>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mix work-item thumbnail-img About">
+							<a href="#" class="popup-image">
+								<%= image_tag homepicture.about.variant(:medium) %>
+							</a>
+							<div class="work-info">
+								<div class="work-info-detail display-table">
+									<div class="display-table-cell">
+										<h4><%= link_to 'Edit', edit_homepicture_path(homepicture), class: 'white' %></h4>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mix work-item thumbnail-img Testimonial">
+							<a href="#" class="popup-image">
+								<%= image_tag homepicture.testimonial.variant(:medium) %>
+							</a>
+							<div class="work-info">
+								<div class="work-info-detail display-table">
+									<div class="display-table-cell">
+										<h4><%= link_to 'Edit', edit_homepicture_path(homepicture), class: 'white' %></h4>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mix work-item thumbnail-img Pricing">
+							<a href="#" class="popup-image">
+								<%= image_tag homepicture.pricing.variant(:medium) %>
+							</a>
+							<div class="work-info">
+								<div class="work-info-detail display-table">
+									<div class="display-table-cell">
+										<h4><%= link_to 'Edit', edit_homepicture_path(homepicture), class: 'white' %></h4>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="mix work-item thumbnail-img Contact">
+							<a href="#" class="popup-image">
+								<%= image_tag homepicture.contact.variant(:medium) %>
+							</a>
+							<div class="work-info">
+								<div class="work-info-detail display-table">
+									<div class="display-table-cell">
+										<h4><%= link_to 'Edit', edit_homepicture_path(homepicture), class: 'white' %></h4>
+									</div>
+								</div>
+							</div>
+						</li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
