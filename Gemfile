@@ -7,7 +7,6 @@ end
 
 
 gem 'friendly_id'
-gem "paperclip"
 gem 'devise'
 gem 'bxslider-rails'
 gem 'owlcarousel-rails'
