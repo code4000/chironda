@@ -17,6 +17,7 @@ gem 'flex-slider-rails'
 gem 'wow-rails'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem 'rails_12factor', group: :production
 
 gem "aws-sdk-s3", require: false
 
