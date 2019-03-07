@@ -7,6 +7,7 @@ end
 
 
 gem 'friendly_id'
+gem "paperclip"
 gem 'devise'
 gem 'bxslider-rails'
 gem 'owlcarousel-rails'
@@ -17,12 +18,8 @@ gem 'flex-slider-rails'
 gem 'wow-rails'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
-gem 'rails_12factor', group: :production
-gem "activestorage"
 
-gem 'aws-sdk'
-gem "aws-sdk-s3"
-gem 'rb-readline'
+gem "aws-sdk-s3", require: false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
