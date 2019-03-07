@@ -18,6 +18,7 @@ gem 'flex-slider-rails'
 gem 'wow-rails'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem 'rb-readline'
 
 gem "aws-sdk-s3", require: false
 

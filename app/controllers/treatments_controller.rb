@@ -3,15 +3,15 @@ class TreatmentsController < ApplicationController
 	before_action :authenticate_user!, except: [:show]
 
 	def show
-		@treatments = Treatment.all 
+		@treatments = Treatment.all
 	end
 	def new
 		@treatment = Treatment.new
 	end
 	def create
-		@treatment = Treatment.new treatment_params
+		@treatment = Treatment.create!(treatment_params)
 
-		if @treatment.save
+	  if @treatment.save
 
 			redirect_to root_path, notice: "Treatment Added Successfully"
 		else

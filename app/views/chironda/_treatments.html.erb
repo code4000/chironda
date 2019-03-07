@@ -28,7 +28,7 @@
 						<% @treatment.each do |treatment| %>
 						<li class="mix work-item thumbnail-img <%= treatment.category %>">
 							<a href="#" class="popup-image">
-								<%= image_tag treatment.variant(:medium) %>
+								<%= image_tag treatment.image.url(:medium) %>
 							</a>
 							<div class="work-info">
 								<div class="work-info-detail display-table">
