@@ -1,4 +1,5 @@
 class Treatment < ApplicationRecord
+	include Paperclip::Glue
 	validates :speciality,:link,:price,:duration,:image, presence: true
 	validates :content, presence: true, length: { minimum: 15}
 
