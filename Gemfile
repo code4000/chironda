@@ -19,6 +19,7 @@ gem 'wow-rails'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'rb-readline'
+gem 'pry', '~> 0.12.2'
 
 gem "aws-sdk-s3", require: false
 

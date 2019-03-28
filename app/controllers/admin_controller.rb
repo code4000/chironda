@@ -9,5 +9,9 @@ class AdminController < ApplicationController
 		@treatment = Treatment.all
 		@testimonial = Testimonial.all
 		@faqs = Faq.all
+
+		if @home == nil
+			@home = Homepicture.create!
+		end
 	end
 end

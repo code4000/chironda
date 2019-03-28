@@ -6,9 +6,9 @@ class HomepicturesController < ApplicationController
 
 
 	def edit
-		
+
 	end
-	
+
 	def update
 		if @home.update homepicture_params
 			redirect_to admin_index_path, notice: "Pictures updated successfully"
@@ -25,6 +25,6 @@ class HomepicturesController < ApplicationController
 	end
 	def find_homepicture
 		@home = Homepicture.find(params[:id])
-		
+
 	end
 end
