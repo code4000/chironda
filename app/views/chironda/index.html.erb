@@ -20,7 +20,7 @@
 
 <!--Start facts-->
 <% if @home != nil %>
-<section id="facts" class="section parallax" style="background-image: url('<%= url_for(@home.about) %>');">
+<section id="facts" class="section parallax" style="background-image: url('<%= @home.about.url %>');">
 </section>
 	<% else %>
 	<section id="facts" class="section parallax noimg">

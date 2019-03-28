@@ -5,9 +5,9 @@
 	<div class="homeslider flexslider">
 		<ul class="slides">
 			<% if @home != nil %>
-			<li class="img1" style="background-image: url('<%= url_for(@home.homeslider1) %>');"></li>
-			<li class="img2" style="background-image: url('<%= url_for(@home.homeslider2) %>');"></li>
-			<li class="img3" style="background-image: url('<%= url_for(@home.homeslider3) %>');"></li>
+			<li class="img1" style="background-image: url('<%= @home.homeslider1.url %>');"></li>
+			<li class="img2" style="background-image: url('<%= @home.homeslider2.url %>');"></li>
+			<li class="img3" style="background-image: url('<%= @home.homeslider3.url %>');"></li>
 			<% else %>
 			<li class="noimg1"></li>
 			<li class="noimg2"></li>

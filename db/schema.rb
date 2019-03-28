@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190307121229) do
+ActiveRecord::Schema.define(version: 20190328125149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,34 @@ ActiveRecord::Schema.define(version: 20190307121229) do
     t.datetime "updated_at", null: false
     t.string "locnumber"
     t.string "locnumber2"
+    t.string "homeslider1_file_name"
+    t.string "homeslider1_content_type"
+    t.bigint "homeslider1_file_size"
+    t.datetime "homeslider1_updated_at"
+    t.string "homeslider2_file_name"
+    t.string "homeslider2_content_type"
+    t.bigint "homeslider2_file_size"
+    t.datetime "homeslider2_updated_at"
+    t.string "homeslider3_file_name"
+    t.string "homeslider3_content_type"
+    t.bigint "homeslider3_file_size"
+    t.datetime "homeslider3_updated_at"
+    t.string "about_file_name"
+    t.string "about_content_type"
+    t.bigint "about_file_size"
+    t.datetime "about_updated_at"
+    t.string "testimonial_file_name"
+    t.string "testimonial_content_type"
+    t.bigint "testimonial_file_size"
+    t.datetime "testimonial_updated_at"
+    t.string "pricing_file_name"
+    t.string "pricing_content_type"
+    t.bigint "pricing_file_size"
+    t.datetime "pricing_updated_at"
+    t.string "contact_file_name"
+    t.string "contact_content_type"
+    t.bigint "contact_file_size"
+    t.datetime "contact_updated_at"
   end
 
   create_table "testimonials", force: :cascade do |t|

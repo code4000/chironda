@@ -1,5 +1,5 @@
 <% if @home != nil %>
-<section id="pricing" class="section parallax" id="pricing" style="background-image: url('<%= url_for(@home.pricing) %>');">
+<section id="pricing" class="section parallax" id="pricing" style="background-image: url('<%= @home.pricing.url %>');">
 	<% else %>
 	<section id="pricing" class="section parallax noimg" id="pricing" >
 		<% end %>
